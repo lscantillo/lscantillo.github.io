@@ -1,0 +1,73 @@
+---
+import NextJS from "./icons/NextJS.astro"
+import Ruby from "./icons/Ruby.astro";
+import Tailwind from "./icons/Tailwind.astro"
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  RUBY: {
+    name: "Ruby - Rails",
+    class: "bg-[#003159] text-white",
+    icon: Ruby,
+  },
+}
+const PROJECTS = [
+  {
+    title: "California Bookings - A website for booking music rooms",
+    description:
+      "Created from scratch with Ruby on Rails. It's a website for booking music rooms. It has a calendar, data export, email integration(Sendgrid) and a user management system.",
+    link: "https://california-bookings.herokuapp.com/",
+    github: "https://github.com/lscantillo/booking-web",
+    image: "/projects/BookingWebCalendar.png",
+    tags: [TAGS.RUBY],
+  },
+  {
+    title: "Extinguiser Control - A website for managing fire extinguishers",
+    description:
+      "Created from scratch with Ruby on Rails. It's a website for managing fire extinguishers. It has a user management system, QR code generation, data export and dashboard.",
+    link: "https://svgl.vercel.app/",
+    github: "https://github.com/pheralb/svgl",
+    image: "/projects/extinguishercontrol.png",
+    tags: [TAGS.RUBY],
+  },
+]
+---
+
+{
+  PROJECTS.map(({ image, title, description, tags }) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-yellow-800 dark:text-yellow-200 mb-2">
+        {title}
+      </h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex gap-x-2 flex-row mb-2">
+        {tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 border border-white/10`}
+            >
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        loading="lazy"
+        class="rounded shadow-2xl shadow-white/10 aspect-video"
+        src={image}
+        alt={`Captura de pantalla del proyecto ${image}`}
+      />
+      <br />
+    </article>
+  ))
+}

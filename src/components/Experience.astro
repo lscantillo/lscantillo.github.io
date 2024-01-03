@@ -1,0 +1,40 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
+  {
+    date: "February 2022 - Currently",
+    title: "Senior Software Engineer − Vascar Solutions",
+    description:
+      "● Develop new backend functionalities for a Ruby on rails app providing maintainable code and best practices.\n ● Maintained the code repository with best practices in backend deployment.\n ● Created a CI/CD pipeline using Jenkins for API deployment with Slack notification of status.\n ● Refactor code and DB queries for the business logic improving the API response time by 25%.",
+    // link: "https://twitch.tv/midudev",
+  },
+  {
+    date: "August 2021 - May 2022",
+    title: "Software Engineer II  − Wizeline",
+    description:
+      "● Develop projects with different clients using multiple technologies emphasizing optimizing and delivering quality projects.\n ● Improvement of internal projects being carried out in the company using their respective technology stack.\n ● Led as a mentor in the Ruby On Rails apprenticeship program with more than 20 interns.\n ● Delivered an MVP project name WizeQ with new features such as: Google Tone Detector and Similar Questions Detector.",
+  },
+  {
+    date: "January 2021 - July 2021",
+    title: "Software Developer  − Ideaware",
+    description:
+      "● Developed the A/B testing feature within a new functionality to the user segmentation platform.\n ● Implemented the unsubscribe functionality for emails where users made subscriptions to the quizzes performed.\n ● Integrated different ESP providers such as Drip, Intercom into the platform to allow users to send their user data to these external services.\n ● Implemented Sidekiq to run automatic jobs to calculate information that customers need regarding analytics.",
+  },
+  {
+    date: "August 2018 - October 2020",
+    title: "Software Developer  − Opensky Consultores S.A.S",
+    description:
+      "● Provided support as technical leader to new features and bugs of a social network developed in Ruby On Rails Kubera.\n ● Managed the project of refactoring the Kubera platform, leading a team of 3 people.\n ● Designed and executed a mobile application developed in Ionic in Beta state to perform preliminary phases of Kubera adoption.\n ● Designed and implemented BPMN process automation in cloud platforms using javascript for different projects at the national and international levels.",
+  },
+]
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
